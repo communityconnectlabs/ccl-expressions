@@ -1,19 +1,27 @@
-# RapidPro Expressions
+RapidPro Expressions
+====================
 
-RapidPro messages and flows can contain expressions which are evaluated at runtime. These come in two flavors: simple and advanced.
+Python implementation of the RapidPro expression and templating system.
 
-## Simple Syntax
+Usage
+-----
 
-This is used to embed single values, e.g.
+```python
+context = new EvaluationContext()
+context.put_variable("name", "bob jones")
 
+evaluator = Evaluator()
+output, errors = evaluator.evaluate_template("Hi @(PROPER(name))", context, False)
+
+assert output == "Hi Bob Jones"
+assert len(errors) == 0
 ```
-Hi @contact, you entered @flow.age for age. Is this correct?
-```
 
-## Advanced Syntax
+Development
+-----------
 
-This is used to build more complex expressions using similar syntax to Excel formulae, e.g.
+If you make changes to the grammar file _Excellent.g4_ you need to generate new lexer and parser python modules
 
-```
-Hi @(PROPER(contact)), you are @(YEAR(NOW()) - flow.year_born) years old. Is this correct?
-```
+   1. Ensure you have the ANTLR command line tools installed.
+   2. Run _gen_parser.sh_
+   

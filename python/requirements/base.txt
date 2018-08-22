@@ -1,5 +1,0 @@
-antlr4-python3-runtime
-python-dateutil
-pytz
-regex
-iso8601
