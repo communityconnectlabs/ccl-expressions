@@ -199,6 +199,13 @@ def datevalue(ctx, text):
     return conversions.to_date(text, ctx)
 
 
+def dateformat(ctx, text, date_format):
+    """
+    Converts date stored in text using a date format
+    """
+    return conversions.to_date(text, ctx, date_format)
+
+
 def day(ctx, date):
     """
     Returns only the day of the month of a date (1 to 31)

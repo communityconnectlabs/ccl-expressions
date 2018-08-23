@@ -94,18 +94,19 @@ def to_string(value, ctx):
     raise EvaluationError("Can't convert '%s' to a string" % six.text_type(value))
 
 
-def to_date(value, ctx):
+def to_date(value, ctx, date_format=None):
     """
     Tries conversion of any value to a date
     """
     if isinstance(value, six.string_types):
         temporal = ctx.get_date_parser().auto(value)
         if temporal is not None:
-            return to_date(temporal, ctx)
+            return to_date(temporal, ctx, date_format)
     elif type(value) == datetime.date:
-        return value
+        return value.strftime(date_format) if date_format else value
     elif isinstance(value, datetime.datetime):
-        return value.date()  # discard time
+        value = value.date()  # discard time
+        return value.strftime(date_format) if date_format else value
 
     raise EvaluationError("Can't convert '%s' to a date" % six.text_type(value))
 
