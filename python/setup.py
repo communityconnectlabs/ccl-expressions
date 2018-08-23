@@ -29,13 +29,13 @@ required_packages, extra_packages = _read_requirements("requirements/base.txt", 
 test_packages, extra_packages = _read_requirements("requirements/tests.txt", extra_packages)
 
 setup(
-    name='rapidpro-expressions',
+    name='ccl-expressions',
     version='1.2',
     description='Python implementation of the RapidPro expression and templating system',
-    url='https://github.com/rapidpro/expressions',
+    url='https://github.com/greatnonprofits-nfp/ccl-expressions',
 
-    author='Nyaruka',
-    author_email='code@nyaruka.com',
+    author='Nyaruka, CCL',
+    author_email='code@nyaruka.com, support@communityconnectlabs.com',
 
     license='BSD',
 
