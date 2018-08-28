@@ -105,8 +105,7 @@ def to_date(value, ctx, date_format=None):
     elif type(value) == datetime.date:
         return value.strftime(date_format) if date_format else value
     elif isinstance(value, datetime.datetime):
-        value = value.date()  # discard time
-        return value.strftime(date_format) if date_format else value
+        return value.strftime(date_format) if date_format else value.date()
 
     raise EvaluationError("Can't convert '%s' to a date" % six.text_type(value))
 
