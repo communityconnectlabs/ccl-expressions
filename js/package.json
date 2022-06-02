@@ -4,7 +4,7 @@
   "repository": "git@github.com:rapidpro/expressions.git",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "jasmine-core": "2.4.1",
+    "jasmine-core": "2.99.1",
     "karma": "0.13.19",
     "karma-chrome-launcher": "0.2.2",
     "karma-phantomjs-launcher": "1.0.0",
